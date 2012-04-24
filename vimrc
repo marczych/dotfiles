@@ -3,6 +3,7 @@
 " .vimrc -- the way it ought to be: Ha. It rhymes!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+colorscheme slate
 set encoding=utf-8
 behave xterm
 set nocompatible       " no compatibility with vi
@@ -32,7 +33,10 @@ set ruler              " display row, column and % of document
 set showcmd            " show partial commands in the status line
 set showmatch          " show matching () {} etc.
 set showmode           " show current mode
-set number
+
+if exists ('+colorcolumn')
+   set cc=80
+endif
 
 " Settings for autoindentation, comments, and what-have-you
 
@@ -43,6 +47,7 @@ set shiftwidth=3       " >> and << shift 3 spaces
 set modeline           " check for a modeline
 set softtabstop=3      " see spaces as tabs
 set scrolloff=5        " start scrolling when cursor is N lines from edge
+set number
 
 " whoa... wtf?
 set nowrap             " don't soft wrap
@@ -52,8 +57,20 @@ set wrap               " linewrap
 set laststatus=2
 set statusline=%<%f\ %m\ %h%r%=%b\ 0x%B\ \ %l,%c%V\ %P\ of\ %L
 
-" sets path to Code dir
-set path=~/Code/**
+" turn off gui stuff
+set guioptions-=m
+set guioptions-=T
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+set guioptions-=b
+
+" don't complete .class files
+set wildignore=*.class
+
+" disable mouse click
+set mouse-=a
 
 imap jj <Esc>
 inoremap {<CR> {<CR>}<Esc>O
@@ -62,10 +79,16 @@ inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 set cpoptions+=$ "show dollar sign at end of text to be changed
 
-"Highlights lines that are greater than 80 columns
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength '\%80v.\+'
-"set colorcolumn=80
+" eclim stuff
+command! JIM JavaImportMissing
+command! JC JavaCorrect
+command! PP ProjectProblems
+
+function! JOI()
+   JavaImportMissing
+   JavaImportClean
+endfunction
+command! JOI :call JOI()
 
 let g:EasyMotion_leader_key = ',m'
 let $VIM = "~/.vim"
