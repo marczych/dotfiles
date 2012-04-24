@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 colorscheme slate
 set encoding=utf-8
 behave xterm
