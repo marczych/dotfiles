@@ -1,5 +1,8 @@
 call pathogen#infect()
 
+" Set to your current project's root directory
+set path=PATH/**
+
 colorscheme slate
 set encoding=utf-8
 behave xterm
