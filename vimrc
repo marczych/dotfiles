@@ -1,8 +1,3 @@
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" .vimrc -- the way it ought to be: Ha. It rhymes!
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 colorscheme slate
 set encoding=utf-8
 behave xterm
@@ -19,9 +14,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-set ai " Auto indent
-set si " smart indenting
-
 set backspace=2        " allow <BS> to go past last insert
 set gdefault           " assume :s uses /g
 set ignorecase         " ignore case in search patterns
@@ -34,23 +26,16 @@ set showcmd            " show partial commands in the status line
 set showmatch          " show matching () {} etc.
 set showmode           " show current mode
 
-if exists ('+colorcolumn')
-   set cc=80
-endif
-
 " Settings for autoindentation, comments, and what-have-you
-
+set ai " Auto indent
+set si " smart indenting
 set expandtab          " expand tabs with spaces
 set tabstop=3          " <Tab> move three characters
 set shiftwidth=3       " >> and << shift 3 spaces
-"set textwidth=79       " hard wrap at 79 characters
 set modeline           " check for a modeline
 set softtabstop=3      " see spaces as tabs
 set scrolloff=5        " start scrolling when cursor is N lines from edge
-set number
-
-" whoa... wtf?
-set nowrap             " don't soft wrap
+set number             " show line numbers
 set wrap               " linewrap
 
 " turns status line always on and configures it
@@ -65,13 +50,12 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 set guioptions-=b
+set mouse-=a "disable mouse click
 
 " don't complete .class files
 set wildignore=*.class
 
-" disable mouse click
-set mouse-=a
-
+" Various remaps
 imap jj <Esc>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap ({<CR> ({<CR>});<Esc>O
@@ -93,45 +77,10 @@ command! JOI :call JOI()
 let g:EasyMotion_leader_key = ',m'
 let $VIM = "~/.vim"
 
-" Look at your diff
-function! SvnDiff()
-   let text = system("svn di")
-   let tempName = tempname()
-
-   exec "redir! > " . tempName
-   silent echon text
-   redir END
-   execute "vs " . tempName
-   redraw!
-endfunction
-command! SD :call SvnDiff()
-
-
-" Call 'svn blame' on the current file and grab the output for the current line
-" plus the surrounding context. Display the result via echo and redraw the
-" screen after input.
-function! SvnBlame(linesOfContext)
-   let pos = line(".")
-   let text = system("svn blame " . expand("%:p"))
-   let tempName = tempname()
-
-   exec "redir! > " . tempName
-   silent echon text
-   redir END
-   execute "botr " . (a:linesOfContext * 2 + 1) . "split " . tempName
-   exec pos
-   norm zz
-   redraw!
-endfunction
-command! SB :call SvnBlame(6)
-
-:source ~/.vim/matchit/plugin/matchit.vim
-:source ~/.vim/easymotion/plugin/EasyMotion.vim
-:source ~/.vim/NERD_tree/plugin/NERD_tree.vim
-
 " highlight trailing whitespace
 highlight WhitespaceEOL ctermbg=Red guibg=Red
 match WhitespaceEOL /\s\+$/
+
 " colorcolumn
 if exists('+colorcolumn')
    set cc=80
@@ -142,12 +91,6 @@ endif
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
-
-"See help completion for source,
-"Note: usual completion is on <C-n> but more trouble to press all the time.
-"Never type the same word twice and maybe learn a new spellings!
-"Use the Linux dictionary when spelling is in doubt.
-"Window users can copy the file to their machine.
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
     return "\<C-N>"
