@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ln -f -s ~/dotfiles/vimrc ~/.vimrc
-ln -f -s ~/dotfiles/vim-pathogen/autoload ~/.vim/autoload
-ln -f -s ~/dotfiles/vim/bundle ~/.vim/bundle
+rm -rf ~/.vim
+ln -f -s ~/dotfiles/vim ~/.vim
 
 echo "Infected."
