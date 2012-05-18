@@ -61,7 +61,7 @@ set mouse-=a "disable mouse click
 set wildignore=*.class
 
 " Various remaps
-imap jj <Esc>
+imap kj <Esc>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap ({<CR> ({<CR>});<Esc>O
 inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
