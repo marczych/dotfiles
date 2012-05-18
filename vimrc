@@ -1,4 +1,5 @@
 call pathogen#infect()
+call pathogen#helptags()
 
 " Set to your current project's root directory
 set path=PATH/**
