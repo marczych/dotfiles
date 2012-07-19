@@ -1,5 +1,8 @@
 #!/bin/bash
 
+ln -f -s ~/dotfiles/bashrc ~/.bashrc
+
+# Vim stuffs.
 ln -f -s ~/dotfiles/vimrc ~/.vimrc
 rm -rf ~/.vim
 ln -f -s ~/dotfiles/vim ~/.vim
