@@ -1,0 +1,2 @@
+# Globally ignore swap files
+*.sw?

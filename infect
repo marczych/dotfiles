@@ -1,6 +1,10 @@
 #!/bin/bash
 
+# Bashrc
 ln -f -s ~/dotfiles/bashrc ~/.bashrc
+
+# Git
+ln -f -s ~/dotfiles/gitconfig ~/.gitconfig
 
 # Vim stuffs.
 ln -f -s ~/dotfiles/vimrc ~/.vimrc

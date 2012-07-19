@@ -1,0 +1,17 @@
+[user]
+   name = Marc Zych
+   email = marczych@gmail.com
+[github]
+   user = marczych
+[core]
+   excludesfile = ~/dotfiles/gitignore
+[color]
+   ui = true
+[alias]
+   ds = diff --cached
+   st = status
+   co = checkout
+   di = diff
+   ci = commit
+[push]
+   default = current
