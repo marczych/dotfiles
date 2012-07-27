@@ -13,6 +13,7 @@ filetype indent on     " check for indent file
 syntax enable          " syntax highlighting
 set t_Co=16
 colorscheme solarized
+set background=dark
 
 set hlsearch
 
