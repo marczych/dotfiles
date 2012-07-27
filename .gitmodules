@@ -34,3 +34,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = http://github.com/scrooloose/syntastic.git
+[submodule "solarized"]
+	path = solarized
+	url = https://github.com/altercation/solarized.git
