@@ -4,21 +4,17 @@ call pathogen#helptags()
 " Set to your current project's root directory
 set path=PATH/**
 
-colorscheme slate
 set encoding=utf-8
 behave xterm
 set nocompatible       " no compatibility with vi
 filetype on            " recognize syntax by file extension
 filetype plugin on     " Look at .vim/ftplugin
 filetype indent on     " check for indent file
-syntax on              " syntax highlighting
+syntax enable          " syntax highlighting
+set t_Co=16
+colorscheme solarized
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+set hlsearch
 
 set backspace=2        " allow <BS> to go past last insert
 set gdefault           " assume :s uses /g
