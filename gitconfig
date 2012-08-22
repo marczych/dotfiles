@@ -13,5 +13,6 @@
    co = checkout
    di = diff
    ci = commit
+   addp = add -p
 [push]
    default = current
