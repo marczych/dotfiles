@@ -66,17 +66,6 @@ inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 set cpoptions+=$ "show dollar sign at end of text to be changed
 
-" eclim stuff
-command! JIM JavaImportMissing
-command! JC JavaCorrect
-command! PP ProjectProblems
-
-function! JOI()
-   JavaImportMissing
-   JavaImportClean
-endfunction
-command! JOI :call JOI()
-
 let g:EasyMotion_leader_key = ',m'
 let $VIM = "~/.vim"
 
