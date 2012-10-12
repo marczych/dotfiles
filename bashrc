@@ -6,6 +6,7 @@ fi
 
 alias ll='ls -l'
 alias lla='ls -la'
+alias g='git'
 
 # User specific aliases and functions
 PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin/:/usr/local/sbin/:/usr/sbin/:/sbin/:$PATH:$HOME/
