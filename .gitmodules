@@ -33,4 +33,7 @@
 	url = http://github.com/scrooloose/syntastic.git
 [submodule "solarized"]
 	path = solarized
-	url = https://github.com/altercation/solarized.git
+	url = http://github.com/altercation/solarized.git
+[submodule "vim/bundle/vim-lose"]
+	path = vim/bundle/vim-lose
+	url = http://github.com/marczych/vim-lose.git
