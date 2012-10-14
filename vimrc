@@ -22,7 +22,7 @@ command! -nargs=1 Find call Find(<q-args>)
 function! Find(name)
    let rawPath = &path
    let pathDir = substitute(rawPath, "**", "", "g")
-   let findOutput = system('find '.pathDir.' | grep "'.a:name.'$"')
+   let findOutput = system('find '.pathDir.' | grep "/'.a:name.'$"')
    let matchedFiles = split(findOutput, "\n")
 
    if len(matchedFiles) == 0
