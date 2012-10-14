@@ -17,39 +17,6 @@ set background=dark
 
 set hlsearch
 
-command! -nargs=1 Find call Find(<q-args>)
-
-function! Find(name)
-   let rawPath = &path
-   let pathDir = substitute(rawPath, "**", "", "g")
-   let findOutput = system('find '.pathDir.' | grep "/'.a:name.'$"')
-   let matchedFiles = split(findOutput, "\n")
-
-   if len(matchedFiles) == 0
-      echo 'Cannot find file "'.a:name.'" in path.'
-      return
-   elseif len(matchedFiles) == 1
-      let fileToOpen = matchedFiles[0]
-   else
-      let i = 0
-      for file in matchedFiles
-         echo i."\t".file
-         let i+= 1
-      endfor
-
-      let selection = str2nr(input("Which file number? "))
-
-      if selection > len(matchedFiles)
-         echo selection." is out of range!"
-         return
-      endif
-
-      let fileToOpen = matchedFiles[selection]
-   endif
-
-   execute "e ".fileToOpen
-endfunc
-
 " Open file for class name under cursor
 nnoremap <C-i> yiw:find <C-R>".php<CR>
 
@@ -73,7 +40,7 @@ function! FindFile()
    let fileName = cursorWord.extension
 
    " Open the file in the current buffer.
-   call Find(fileName)
+   call lose#lose(fileName)
 endfunc
 
 set backspace=2        " allow <BS> to go past last insert
