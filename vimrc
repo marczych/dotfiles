@@ -17,6 +17,9 @@ set background=dark
 
 set hlsearch
 
+command! EA :checktime
+set autoread           " Automatically load changed files.
+
 " Open file for class name under cursor
 nnoremap <C-i> yiw:find <C-R>".php<CR>
 
