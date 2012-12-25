@@ -5,6 +5,7 @@
    user = marczych
 [core]
    excludesfile = ~/dotfiles/gitignore
+   editor = /usr/bin/vim
 [color]
    ui = true
 [alias]
