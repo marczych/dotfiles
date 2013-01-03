@@ -4,6 +4,9 @@ if [ -f /etc/bashrc ]; then
    . /etc/bashrc
 fi
 
+# Set vi mode
+set -o vi
+
 alias ll='ls -l'
 alias lla='ls -la'
 alias g='git'
