@@ -1,0 +1,5 @@
+# Remap 'kj' to Escape for bash vi-mode.
+$if mode=vi
+    set keymap vi-insert
+    "kj": vi-movement-mode
+$endif

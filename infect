@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Bashrc
+# Bashrc and inputrc
 ln -f -s ~/dotfiles/bashrc ~/.bashrc
+ln -f -s ~/dotfiles/inputrc ~/.inputrc
 
 # Git
 ln -f -s ~/dotfiles/gitconfig ~/.gitconfig
