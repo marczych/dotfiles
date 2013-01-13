@@ -7,6 +7,9 @@ ln -f -s ~/dotfiles/inputrc ~/.inputrc
 # Git
 ln -f -s ~/dotfiles/gitconfig ~/.gitconfig
 
+# Tmux
+ln -f -s ~/dotfiles/tmux.conf ~/.tmux.conf
+
 # Vim stuffs.
 ln -f -s ~/dotfiles/vimrc ~/.vimrc
 rm -rf ~/.vim
