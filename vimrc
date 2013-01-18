@@ -11,7 +11,7 @@ filetype on            " recognize syntax by file extension
 filetype plugin on     " Look at .vim/ftplugin
 filetype indent on     " check for indent file
 syntax enable          " syntax highlighting
-set t_Co=16
+set t_Co=256
 colorscheme solarized
 set background=dark
 
