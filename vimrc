@@ -90,6 +90,7 @@ set wildignore=*.class
 " Various remaps
 imap kj <Esc>
 inoremap {<CR> {<CR>}<Esc>O
+inoremap [<CR> [<CR>];<Esc><<O
 inoremap ({<CR> ({<CR>});<Esc>O
 inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
