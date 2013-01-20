@@ -7,6 +7,11 @@ fi
 # Set vi mode
 set -o vi
 
+# Tmux aliases
+alias tn='tmux new -s'
+alias ta='tmux attach -t'
+alias tls='tmux ls'
+
 alias ls='ls --color=always'
 alias ll='ls -l'
 alias lla='ls -la'
