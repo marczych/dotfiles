@@ -11,6 +11,7 @@ set -o vi
 alias tn='tmux new -s'
 alias ta='tmux attach -t'
 alias tls='tmux ls'
+alias tk='tmux kill-session -t'
 
 alias ls='ls --color=always'
 alias ll='ls -l'
