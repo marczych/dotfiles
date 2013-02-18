@@ -1,3 +1,6 @@
+set editing-mode vi
+set keymap vi
+
 # Remap 'kj' to Escape for bash vi-mode.
 $if mode=vi
     set keymap vi-insert
