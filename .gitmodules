@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim-lose"]
 	path = vim/bundle/vim-lose
 	url = http://github.com/marczych/vim-lose.git
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = http://github.com/airblade/vim-gitgutter.git
