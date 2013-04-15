@@ -10,7 +10,8 @@
    ui = true
 [alias]
    ds = diff --cached
-   st = status
+   st = status -sb
+   std = diff HEAD --stat
    co = checkout
    di = diff
    ci = commit
