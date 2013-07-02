@@ -16,8 +16,9 @@ alias tk='tmux kill-session -t'
 alias ls='ls --color=always'
 alias ll='ls -l'
 alias lla='ls -la'
-alias g='git'
 alias swaps='find . -name "*.sw[^f]"'
+alias g='git'
+alias gr='cd $(git rev-parse --show-toplevel)'
 
 # User specific aliases and functions
 PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin/:/usr/local/sbin/:/usr/sbin/:/sbin/:$PATH:$HOME/
