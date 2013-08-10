@@ -111,6 +111,8 @@ else
    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
+au BufNewFile,BufRead *.gradle setf groovy
+
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 " function! Tab_Or_Complete()
