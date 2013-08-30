@@ -23,3 +23,5 @@
    ap = add -p
 [push]
    default = current
+[merge]
+	tool = vimdiff
