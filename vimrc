@@ -15,9 +15,11 @@ set t_Co=256
 colorscheme solarized
 set background=dark
 
+set keywordprg=pman
+
 set hlsearch
 
-command! EA :checktime
+command! EA :checktime " Reopen all changed files with EA.
 set autoread           " Automatically load changed files.
 
 " Open file for class name under cursor
@@ -85,7 +87,7 @@ set guioptions-=b
 set mouse-=a "disable mouse click
 
 " don't complete .class files
-set wildignore=*.class
+set wildignore=*.class,*.sw?
 
 " Various remaps
 imap kj <Esc>
@@ -112,6 +114,13 @@ else
 endif
 
 au BufNewFile,BufRead *.gradle setf groovy
+
+" Set up dictionary completion.
+set dictionary+=~/.vim/dictionary/english-freq
+set complete+=k
+
+" Don't scan included files, it's slow!!!!
+set complete-=i
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
