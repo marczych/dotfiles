@@ -1,8 +1,8 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-" Set to your current project's root directory
-set path=PATH/**
+" Set to current directory.
+set path=./**
 
 set encoding=utf-8
 behave xterm
