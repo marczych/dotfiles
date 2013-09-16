@@ -21,6 +21,7 @@
    cur = rev-parse HEAD
    cp = cherry-pick
    ap = add -p
+   rh = reset --hard
 [push]
    default = current
 [merge]
