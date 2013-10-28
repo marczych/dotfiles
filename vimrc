@@ -1,6 +1,12 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" Enable syntastic by default but disable it for java because it is really
+" slow and doesn't find imports.
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['java'] }
+
 " Set to current directory.
 set path=./**
 
