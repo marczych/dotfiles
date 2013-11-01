@@ -129,8 +129,8 @@ set complete+=k
 set complete-=i
 
 " d and u make the window vertically smaller and bigger, respectively.
-nmap <space>d 10<C-W>-
-nmap <space>u 10<C-W>+
+nmap <space>d 1000<C-W>-
+nmap <space>u 20<C-W>+
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
