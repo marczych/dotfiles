@@ -6,7 +6,7 @@ alias com='ssh cominor.com'
 export ANDROID_HOME=`brew --prefix android`
 export M2_HOME=/usr/local/Cellar/maven/3.0.5/libexec
 export M2=$M2_HOME/bin
-export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
 
 export PATH=$M2:$PATH.
