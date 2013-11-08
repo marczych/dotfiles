@@ -132,6 +132,9 @@ set complete-=i
 nmap <space>d 1000<C-W>-
 nmap <space>u 20<C-W>+
 
+" Don't automatically resize windows when splitting.
+set noequalalways
+
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 " function! Tab_Or_Complete()
