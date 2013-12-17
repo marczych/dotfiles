@@ -22,6 +22,7 @@
    cp = cherry-pick
    ap = add -p
    rh = reset --hard
+   rc = rebase --continue
    catpc = commit -a --amend -C HEAD
 [push]
    default = current
