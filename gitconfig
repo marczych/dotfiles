@@ -24,6 +24,7 @@
    rh = reset --hard
    rc = rebase --continue
    catpc = commit -a --amend -C HEAD
+   s = submodule
 [push]
    default = current
 [merge]
