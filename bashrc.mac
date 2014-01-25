@@ -3,6 +3,8 @@ unalias ls
 
 alias com='ssh cominor.com'
 
+alias love='/Applications/love.app/Contents/MacOS/love'
+
 export ANDROID_HOME=`brew --prefix android`
 export M2_HOME=/usr/local/Cellar/maven/3.0.5/libexec
 export M2=$M2_HOME/bin
