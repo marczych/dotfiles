@@ -47,3 +47,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 export TERM="xterm-256color"
+
+if [ "$(uname)" = "Darwin" ] ;then
+   source ~/dotfiles/zshrc.mac
+fi
