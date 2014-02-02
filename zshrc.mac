@@ -1,0 +1,21 @@
+# Macs aren't happy with --color=always
+unalias ls
+
+alias com='ssh cominor.com'
+
+alias love='/Applications/love.app/Contents/MacOS/love'
+
+export ANDROID_HOME=`brew --prefix android`
+export M2_HOME=/usr/local/Cellar/maven/3.0.5/libexec
+export M2=$M2_HOME/bin
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
+
+export PATH=$M2:$PATH.
+
+function ass {
+   DATE=`date`
+   FILE="${HOME}/Desktop/Android Screen Shot $DATE.png"
+
+   adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > "$FILE"
+}

@@ -2,8 +2,9 @@
 
 git submodule update --init
 
-# Bashrc and inputrc
+# Bashrc, zshrc, and inputrc
 ln -f -s ~/dotfiles/bashrc ~/.bashrc
+ln -f -s ~/dotfiles/zshrc ~/.zshrc
 ln -f -s ~/dotfiles/inputrc ~/.inputrc
 
 # Git
