@@ -62,9 +62,8 @@ set incsearch          " immediately highlight search matches
 set noerrorbells       " no beeps on errors
 set nomodeline         " prevent others from overriding this .vimrc
 set ruler              " display row, column and % of document
-set showcmd            " show partial commands in the status line
 set showmatch          " show matching () {} etc.
-set showmode           " show current mode
+set noshowmode         " don't show the current mode
 
 " Settings for autoindentation, comments, and what-have-you
 set ai " Auto indent
@@ -80,7 +79,6 @@ set wrap               " linewrap
 
 " turns status line always on and configures it
 set laststatus=2
-set statusline=%<%f\ %m\ %h%r%=%b\ 0x%B\ \ %l,%c%V\ %P\ of\ %L
 
 " turn off gui stuff
 set guioptions-=m

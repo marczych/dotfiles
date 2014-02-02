@@ -43,3 +43,6 @@
 [submodule "vim/bundle/vim-protobuf"]
 	path = vim/bundle/vim-protobuf
 	url = https://github.com/uarun/vim-protobuf.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
