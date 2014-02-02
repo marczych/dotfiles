@@ -31,7 +31,7 @@ export LS_COLORS='di=01;35:ln=01;36:pi=40;33:so=00;35:do=00;35:bd=40;33;01:cd=40
 
 PROMPT_LINE_ONE=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%a %b %d, %I:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}'
 PROMPT_LINE_TWO=$'%{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B]>%{\e[0m%}%b '
-PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
+PS2=$' \e[0;34m%}%B%_%{\e[0m%}%b> '
 
 # Include vi mode in prompt.
 function zle-line-init zle-keymap-select {
