@@ -35,9 +35,13 @@ PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 
 # Include vi mode in prompt.
 function zle-line-init zle-keymap-select {
-    PROMPT="${PROMPT_LINE_ONE} ${${KEYMAP/vicmd/[NORMAL]}/(main|viins)/[INSERT]}
+   NORMAL_MODE_COLOR=$'\e[0;31m'
+   INSERT_MODE_COLOR=$'\e[0;32m'
+   END_COLOR=$'\e[0m'
+
+   PROMPT="${PROMPT_LINE_ONE} [${${KEYMAP/vicmd/${NORMAL_MODE_COLOR}NORMAL${END_COLOR}}/(main|viins)/${INSERT_MODE_COLOR}INSERT${END_COLOR}}]
 ${PROMPT_LINE_TWO}"
-    zle reset-prompt
+   zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
