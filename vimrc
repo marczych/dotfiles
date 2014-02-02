@@ -99,10 +99,10 @@ inoremap {<CR> {<CR>}<Esc>O
 inoremap [<CR> [<CR>];<Esc><<O
 inoremap ({<CR> ({<CR>});<Esc>O
 inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
-nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
+nmap <Leader>p :set invpaste<CR>:set paste?<CR>
 set cpoptions+=$ "show dollar sign at end of text to be changed
 
-let g:EasyMotion_leader_key = ',m'
+let mapleader = " "
 let $VIM = "~/.vim"
 
 " highlight trailing whitespace
@@ -127,8 +127,8 @@ set complete+=k
 set complete-=i
 
 " d and u make the window vertically smaller and bigger, respectively.
-nmap <space>d 1000<C-W>-
-nmap <space>u 20<C-W>+
+nmap <Leader>d 1000<C-W>-
+nmap <Leader>u 20<C-W>+
 
 " Don't automatically resize windows when splitting.
 set noequalalways
