@@ -28,6 +28,6 @@
 [push]
    default = current
 [merge]
-	tool = vimdiff
+   tool = vimdiff
 [mergetool]
    keepBackup = false

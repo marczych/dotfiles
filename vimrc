@@ -105,10 +105,6 @@ set cpoptions+=$ "show dollar sign at end of text to be changed
 let mapleader = " "
 let $VIM = "~/.vim"
 
-" highlight trailing whitespace
-highlight WhitespaceEOL ctermbg=Red guibg=Red
-match WhitespaceEOL /\s\+$/
-
 " colorcolumn
 if exists('+colorcolumn')
    set cc=80
@@ -116,6 +112,10 @@ if exists('+colorcolumn')
 else
    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+" Display some whitespace characters.
+set listchars=tab:>-,trail:.,extends:>,precedes:<
+set list
 
 au BufNewFile,BufRead *.gradle setf groovy
 
@@ -132,15 +132,3 @@ nmap <Leader>u 20<C-W>+
 
 " Don't automatically resize windows when splitting.
 set noequalalways
-
-"Use TAB to complete when typing words, else inserts TABs as usual.
-"Uses dictionary and source files to find matching words to complete.
-" function! Tab_Or_Complete()
-"   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-"     return "\<C-N>"
-"   else
-"     return "\<Tab>"
-"   endif
-" endfunction
-" inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-" set dictionary="/usr/dict/words"
