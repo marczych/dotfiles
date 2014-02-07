@@ -8,6 +8,7 @@ alias tn='tmux new -s'
 alias ta='tmux attach -t'
 alias tls='tmux ls'
 alias tk='tmux kill-session -t'
+alias tb='~/dotfiles/tmux_resurrect -b'
 
 alias ls='ls --color=always'
 alias ll='ls -l'
