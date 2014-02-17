@@ -50,11 +50,11 @@ HOSTHASH=$(cat <(echo 'noise') <(hostname) | $HASHFUNCTION | tr '[:lower:]' '[:u
 HOSTOFFSET=$(echo "ibase=16; $HOSTHASH % ${#PROMPTCOLORS} + 1" | bc)
 HOSTCOLOR=$PROMPTCOLORS[$HOSTOFFSET]
 
-PROMPT_PART_ONE=$'%{\e[0;34m%}%B┌─['$USERCOLOR$'%n%{\e[1;30m%}@%{\e[0m%}'$HOSTCOLOR$'%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%a %b %d, %I:%M:%S"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}'
+PROMPT_PART_ONE=$'%{\e[0;34m%}%B['"%{$USERCOLOR%}"$'%n%{\e[1;30m%}@%{\e[0m%}'"%{$HOSTCOLOR%}"$'%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%a %b %d, %I:%M:%S"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}'
 PROMPT_PART_TWO=$'
-%{\e[0;34m%}%B└─%B['
+%{\e[0;34m%}%B%B['
 PROMPT_PART_THREE=$'%B]>%{\e[0m%}%b '
-PS2=$' \e[0;34m%}%B%_%{\e[0m%}%b> '
+PS2=$' %{\e[0;34m%}%B%_%{\e[0m%}%b> '
 
 # Include vi mode in prompt.
 function zle-line-init zle-keymap-select {
