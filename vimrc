@@ -7,6 +7,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java'] }
 
+let mapleader = " "
 " Set to current directory.
 set path=./**
 
@@ -102,7 +103,6 @@ inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
 nmap <Leader>p :set invpaste<CR>:set paste?<CR>
 set cpoptions+=$ "show dollar sign at end of text to be changed
 
-let mapleader = " "
 let $VIM = "~/.vim"
 
 " colorcolumn
