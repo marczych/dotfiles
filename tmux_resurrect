@@ -192,14 +192,15 @@ elif [ "${task}" = 'restore' ] ;then
       fi
     done
 
+    # Don't rename windows for now because the current command isn't reflected.
     ##re-name the windows to reflect backed-up window names
-    echo "* Re-naming windows to original names:"
-    for window in ${window_list_rev} ;do
-      name=`cat ${backup_dir}/${session}:${window}-name`
-      if [ "${name}" != "${window}" ] ;then
-        echo "${session}:${window} -> ${session}:${name}"
-        tmux rename-window -t ${session}:${window} "${name}"
-      fi
-    done
+    # echo "* Re-naming windows to original names:"
+    # for window in ${window_list_rev} ;do
+    #   name=`cat ${backup_dir}/${session}:${window}-name`
+    #   if [ "${name}" != "${window}" ] ;then
+    #     echo "${session}:${window} -> ${session}:${name}"
+    #     tmux rename-window -t ${session}:${window} "${name}"
+    #   fi
+    # done
   done
 fi
