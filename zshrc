@@ -42,7 +42,7 @@ fi
 #done
 
 # Get colors based on the user and hostname.
-PROMPTCOLORS=($'\e[1;31m' $'\e[1;35m' $'\e[1;37m' $'\e[0;30m' $'\e[0;31m'  $'\e[0;32m' $'\e[0;33m' $'\e[0;34m' $'\e[0;35m' $'\e[0;36m')
+PROMPTCOLORS=($'%{\e[1;31m%}' $'%{\e[1;35m%}' $'%{\e[1;37m%}' $'%{\e[0;30m%}' $'%{\e[0;31m%}'  $'%{\e[0;32m%}' $'%{\e[0;33m%}' $'%{\e[0;34m%}' $'%{\e[0;35m%}' $'%{\e[0;36m%}')
 USERHASH=$(whoami | $HASHFUNCTION | tr '[:lower:]' '[:upper:]' | awk '{print $1}')
 USEROFFSET=$(echo "ibase=16; $USERHASH % ${#PROMPTCOLORS} + 1" | bc)
 USERCOLOR=$PROMPTCOLORS[$USEROFFSET]
@@ -50,7 +50,7 @@ HOSTHASH=$(cat <(echo 'noise') <(hostname) | $HASHFUNCTION | tr '[:lower:]' '[:u
 HOSTOFFSET=$(echo "ibase=16; $HOSTHASH % ${#PROMPTCOLORS} + 1" | bc)
 HOSTCOLOR=$PROMPTCOLORS[$HOSTOFFSET]
 
-PROMPT_PART_ONE=$'%{\e[0;34m%}%B['"%{$USERCOLOR%}"$'%n%{\e[1;30m%}@%{\e[0m%}'"%{$HOSTCOLOR%}"$'%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%a %b %d, %I:%M:%S"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}'
+PROMPT_PART_ONE=$'%{\e[0;34m%}%B['"$USERCOLOR"$'%n%{\e[1;30m%}@%{\e[0m%}'"$HOSTCOLOR"$'%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%a %b %d, %I:%M:%S"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}'
 PROMPT_PART_TWO=$'
 %{\e[0;34m%}%B%B['
 PROMPT_PART_THREE=$'%B]>%{\e[0m%}%b '
@@ -58,10 +58,10 @@ PS2=$' %{\e[0;34m%}%B%_%{\e[0m%}%b> '
 
 # Include vi mode in prompt.
 function zle-line-init zle-keymap-select {
-   NORMAL_MODE_COLOR=$'\e[0;31m'
-   INSERT_MODE_COLOR=$'\e[1;35m'
-   STATUS_ERROR_COLOR=$'\e[0;31m'
-   END_COLOR=$'\e[0m'
+   NORMAL_MODE_COLOR=$'%{\e[0;31m%}'
+   INSERT_MODE_COLOR=$'%{\e[1;35m%}'
+   STATUS_ERROR_COLOR=$'%{\e[0;31m%}'
+   END_COLOR=$'%{\e[0m%}'
 
    PROMPT="${PROMPT_PART_ONE}%(?.. - [${STATUS_ERROR_COLOR}%?${END_COLOR}])${PROMPT_PART_TWO}${${KEYMAP/vicmd/${NORMAL_MODE_COLOR}N${END_COLOR}}/(main|viins)/${INSERT_MODE_COLOR}I${END_COLOR}}${PROMPT_PART_THREE}"
    zle reset-prompt
