@@ -17,6 +17,8 @@ alias swaps='find . -name "*.sw[^f]"'
 alias g='git'
 alias gr='cd $(git rev-parse --show-toplevel)'
 
+source ~/dotfiles/tmux_feature
+
 # Quick find for case insensitive file name matching.
 function qfind {
    find . -iname "*$1*" -not -name "*.sw?" -not -wholename "*/.git/*"  -not -name '*.class'   -type f

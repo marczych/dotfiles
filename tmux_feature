@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# Convenience functions to set the tmux session name based on branches/pull
+# numbers and switches branches based on the session name.
+#
+# Depends on tmux and https://github.com/iFixit/git-scripts.
+
+# (feature|hotfix) start branch-name
+function tfs {
+   tstart feature $1
+}
+
+function ths {
+   tstart hotfix $1
+}
+
+function tstart {
+   $1 start $2 && tmux rename-session $(git rev-parse --abbrev-ref HEAD)
+}
+
+
+# (feature|hotfix) finish
+function tff {
+   tfinish feature
+}
+
+function thf {
+   tfinish hotfix
+}
+
+function tfinish {
+   $1 finish
+   PULL=$(tmux capture-pane -p | grep Successfully | tail -1 | sed 's/^.*#//')
+   tmux rename-session "$(git rev-parse --abbrev-ref HEAD)|$PULL"
+}
+
+
+# (feature|hotfix) switch
+function tsw {
+   feature switch $(tmux display-message -p '#S' | sed 's/|.*$//')
+}
