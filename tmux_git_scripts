@@ -5,37 +5,27 @@
 #
 # Depends on tmux and https://github.com/iFixit/git-scripts.
 
-# (feature|hotfix) start branch-name
-function tfs {
-   tstart feature $1
+# (feature|hotfix) switch based on the session name.
+function tswitch {
+   BRANCH=$(tmux display-message -p '#S' | sed 's/|.*$//')
+   feature switch $BRANCH
 }
 
-function ths {
-   tstart hotfix $1
+# Updates the session name based on the current branch/pull.
+function tupdate {
+   BRANCH=$(git rev-parse --abbrev-ref HEAD)
+   PULL=$(tmux capture-pane -p | grep -E "Successfully .*#[0-9]+" | tail -1 | sed 's/^.*#//')
+   SESSION_NAME="$BRANCH"
+
+   if [ $PULL != '' ] ; then
+      SESSION_NAME="$SESSION_NAME|$PULL"
+   fi
+
+   tmux rename-session "$SESSION_NAME"
 }
 
-function tstart {
-   $1 start $2 && tmux rename-session $(git rev-parse --abbrev-ref HEAD)
-}
-
-
-# (feature|hotfix) finish
-function tff {
-   tfinish feature
-}
-
-function thf {
-   tfinish hotfix
-}
-
-function tfinish {
-   $1 finish
-   PULL=$(tmux capture-pane -p | grep Successfully | tail -1 | sed 's/^.*#//')
-   tmux rename-session "$(git rev-parse --abbrev-ref HEAD)|$PULL"
-}
-
-
-# (feature|hotfix) switch
-function tsw {
-   feature switch $(tmux display-message -p '#S' | sed 's/|.*$//')
+# Attach to an existing session matching any part of the name.
+function tattach {
+   SESSION_NAME=$(tmux ls | sed 's/:.*$//' | grep "$1")
+   tmux attach -t "$SESSION_NAME"
 }

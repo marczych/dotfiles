@@ -5,7 +5,7 @@ bindkey -M viins 'kj' vi-cmd-mode
 
 # Tmux aliases
 alias tn='tmux new -s'
-alias ta='tmux attach -t'
+alias ta='tattach'
 alias tls='tmux ls'
 alias tk='tmux kill-session -t'
 alias tb='~/dotfiles/tmux_resurrect -b'
