@@ -17,7 +17,7 @@ function tupdate {
    PULL=$(tmux capture-pane -p | grep -E "Successfully .*#[0-9]+" | tail -1 | sed 's/^.*#//')
    SESSION_NAME="$BRANCH"
 
-   if [ $PULL != '' ] ; then
+   if [ "$PULL" != '' ] ; then
       SESSION_NAME="$SESSION_NAME|$PULL"
    fi
 
