@@ -16,6 +16,7 @@ alias lla='ls -la'
 alias swaps='find . -name "*.sw[^f]"'
 alias g='git'
 alias gr='cd $(git rev-parse --show-toplevel)'
+alias gf='g grep -l'
 
 source ~/dotfiles/tmux_git_scripts
 
