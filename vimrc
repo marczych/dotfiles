@@ -57,6 +57,11 @@ function! FindFile()
    call lose#lose(fileName)
 endfunc
 
+" Live dangerously
+set nobackup
+set nowritebackup
+set noswapfile
+
 set backspace=2        " allow <BS> to go past last insert
 set gdefault           " assume :s uses /g
 set ignorecase         " ignore case in search patterns
