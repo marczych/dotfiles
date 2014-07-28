@@ -25,6 +25,7 @@
    rc = rebase --continue
    catpc = commit -a --amend -C HEAD
    s = submodule
+   sui = submodule update --init
 [push]
    default = current
 [merge]
