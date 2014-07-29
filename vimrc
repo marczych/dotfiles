@@ -36,6 +36,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 nnoremap <silent> <C-o> :call FindFile()<CR>
 
+nnoremap <silent> <C-t> :tabn<CR>
+
 function! FindFile()
    " Get the word under cursor.
    let cursorWord = expand("<cword>")
