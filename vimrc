@@ -7,6 +7,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java'] }
 
+let g:airline#extensions#branch#enabled = 0
+
 let mapleader = " "
 " Set to current directory.
 set path=./**
