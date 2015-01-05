@@ -9,6 +9,7 @@ alias ta='tattach'
 alias tls='tmux ls'
 alias tk='tmux kill-session -t'
 alias tb='~/dotfiles/tmux_resurrect -b'
+alias tsn='tmux display-message -p "#S"'
 
 alias ls='ls --color=always'
 alias ll='ls -l'
