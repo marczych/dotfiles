@@ -4,7 +4,16 @@ set -o vi
 bindkey -M viins 'kj' vi-cmd-mode
 
 # Tmux aliases
-alias tn='tmux new -s'
+function tn {
+   if [ -z "$1" ]; then
+      SESSION_NAME=$(date --iso-8601=seconds | sed 's/:/-/g')
+   else
+      SESSION_NAME="$1"
+   fi
+
+   tmux new -s "$SESSION_NAME"
+}
+
 alias ta='tattach'
 alias tls='tmux ls'
 alias tk='tmux kill-session -t'
