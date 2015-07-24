@@ -26,6 +26,7 @@
    catpc = commit -a --amend -C HEAD
    s = submodule
    sui = submodule update --init
+   g = grep
 [push]
    default = current
 [merge]
