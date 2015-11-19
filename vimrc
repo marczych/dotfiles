@@ -117,12 +117,9 @@ set cpoptions+=$ "show dollar sign at end of text to be changed
 
 let $VIM = "~/.vim"
 
-" colorcolumn
 if exists('+colorcolumn')
    set cc=80
-   hi ColorColumn ctermbg=red guibg=red
-else
-   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+   hi ColorColumn ctermbg=darkgrey guibg=red
 endif
 
 " Display some whitespace characters.
