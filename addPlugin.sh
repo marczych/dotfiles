@@ -8,10 +8,10 @@ fi
 
 echo "Adding submodule..."
 
-REPONAME=`echo "$1" | sed 's/^.*\///' | sed 's/\..*$//'`
+REPONAME=$(echo "$1" | sed 's/^.*\///' | sed 's/\..*$//')
 
 echo $REPONAME
 
-git submodule add $1 vim/bundle/$REPONAME
+git submodule add "$1" vim/bundle/$REPONAME
 
 echo "Submodule added!"
