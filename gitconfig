@@ -23,6 +23,7 @@
    ap = add -p
    rh = reset --hard
    ur = reset --hard @{u}
+   r = rebase
    rc = rebase --continue
    catpc = commit -a --amend -C HEAD
    s = submodule
