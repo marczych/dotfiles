@@ -31,9 +31,6 @@ set hlsearch
 command! EA :checktime " Reopen all changed files with EA.
 set autoread           " Automatically load changed files.
 
-" Open file for class name under cursor
-nnoremap <C-i> yiw:find <C-R>".php<CR>
-
 nmap <C-n> :NERDTreeToggle<CR>
 
 nnoremap <silent> <C-o> :call FindFile()<CR>
