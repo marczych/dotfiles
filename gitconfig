@@ -29,6 +29,7 @@
    s = submodule
    sui = submodule update --init
    g = grep
+   recent-branches = for-each-ref --sort=-committerdate refs/heads/
 [push]
    default = current
 [merge]
