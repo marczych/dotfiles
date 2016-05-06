@@ -30,6 +30,7 @@
    sui = submodule update --init
    g = grep
    recent-branches = for-each-ref --sort=-committerdate refs/heads/
+   copy-sha = "!git rev-parse HEAD | pbcopy"
 [push]
    default = current
 [merge]
