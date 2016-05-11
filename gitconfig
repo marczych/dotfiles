@@ -31,6 +31,7 @@
    g = grep
    recent-branches = for-each-ref --sort=-committerdate refs/heads/
    copy-sha = "!git rev-parse HEAD | pbcopy"
+   alias = config --get-regexp ^alias\\.
 [push]
    default = current
 [merge]
