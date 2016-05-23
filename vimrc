@@ -105,9 +105,7 @@ set wildignore=*.class,*.sw?
 " Various remaps
 imap kj <Esc>
 inoremap {<CR> {<CR>}<Esc>O
-inoremap [<CR> [<CR>];<Esc><<O
 inoremap ({<CR> ({<CR>});<Esc>O
-inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
 nmap <Leader>p :set invpaste<CR>:set paste?<CR>
 nmap <Leader>t :tabe %<CR>
 set cpoptions+=$ "show dollar sign at end of text to be changed
