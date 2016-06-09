@@ -121,7 +121,8 @@ endif
 set listchars=tab:>-,trail:.,extends:>,precedes:<
 set list
 
-au BufNewFile,BufRead *.gradle setf groovy
+autocmd BufNewFile,BufRead *.gradle set filetype=groovy
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Set up dictionary completion.
 set dictionary+=~/.vim/dictionary/english-freq
