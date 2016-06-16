@@ -41,7 +41,7 @@ function qfind {
 }
 
 # User specific aliases and functions
-PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin/:/usr/local/sbin/:/usr/sbin/:/sbin/:$PATH:$HOME/
+PATH="$HOME/dotfiles/bin:/usr/local/bin:/usr/local/sbin/:/usr/sbin/:/sbin/:$PATH"
 export EDITOR=vim
 export SVN_EDITOR=/usr/bin/vim
 
@@ -101,6 +101,7 @@ setopt SHARE_HISTORY          # Share history between shells.
 
 export TERM="xterm-256color"
 
-if [ "$(uname)" = "Darwin" ] ;then
-   source ~/dotfiles/zshrc.mac
+if [ "$(uname)" = "Darwin" ]; then
+   # Macs aren't happy with --color=always.
+   unalias ls
 fi
