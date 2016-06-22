@@ -111,3 +111,7 @@ if [ "$(uname)" = "Darwin" ]; then
    # Macs aren't happy with --color=always.
    unalias ls
 fi
+
+# Enable bash completion.
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
