@@ -3,6 +3,12 @@ set -o vi
 # Bind 'kj' to switch from insert to normal mode.
 bindkey -M viins 'kj' vi-cmd-mode
 
+# Set 'v' to open the command in an editor.
+bindkey -v
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Tmux aliases
 function tn {
    if [ -z "$1" ]; then
