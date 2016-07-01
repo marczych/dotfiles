@@ -35,6 +35,7 @@ alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias gf='g grep -l'
 
 alias cd_temp='cd $(mktemp -d)'
+alias unix_timestamp='date +%s'
 
 # To make git reset --hard @{u} slightly easier (git reset --hard $u).
 export u='@{u}'
