@@ -39,6 +39,8 @@ alias unix_timestamp='date +%s'
 
 # To make git reset --hard @{u} slightly easier (git reset --hard $u).
 export u='@{u}'
+# To make things like `git diff origin/master...` slightly easier.
+export om='origin/master'
 
 source ~/dotfiles/tmux_git_scripts
 
