@@ -50,7 +50,7 @@ function qfind {
 }
 
 # User specific aliases and functions
-PATH="$HOME/dotfiles/bin:/usr/local/bin:/usr/local/sbin/:/usr/sbin/:/sbin/:$PATH"
+PATH="$HOME/dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 export EDITOR=vim
 export SVN_EDITOR=/usr/bin/vim
 
