@@ -13,7 +13,7 @@
    st = status -sb
    std = diff HEAD --stat
    co = checkout
-   di = diff
+   di = diff --patience
    ci = commit
    cia = commit -a
    addp = add -p
