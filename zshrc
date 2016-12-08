@@ -114,6 +114,17 @@ if [ "$(uname)" = "Darwin" ]; then
    unalias ls
 fi
 
+function every {
+   rate="$1"
+   shift
+
+   while true; do
+      date
+      "$@"
+      sleep "$rate"
+   done
+}
+
 # Enable bash completion.
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
