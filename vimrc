@@ -23,6 +23,9 @@ syntax enable          " syntax highlighting
 set t_Co=256
 colorscheme solarized
 set background=light
+set cursorline " Highlight the current line.
+set wildmenu " Show a better menu for autocompleting commands.
+set lazyredraw " Don't always redraw.
 
 set keywordprg=pman
 
@@ -75,8 +78,8 @@ set showmatch          " show matching () {} etc.
 set noshowmode         " don't show the current mode
 
 " Settings for autoindentation, comments, and what-have-you
-set ai " Auto indent
-set si " smart indenting
+set autoindent " Auto indent
+set smartindent " smart indenting
 set expandtab          " expand tabs with spaces
 set tabstop=3          " <Tab> move three characters
 set shiftwidth=3       " >> and << shift 3 spaces
