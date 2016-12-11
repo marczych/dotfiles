@@ -42,8 +42,6 @@ export u='@{u}'
 # To make things like `git diff origin/master...` slightly easier.
 export om='origin/master'
 
-source ~/dotfiles/tmux_git_scripts
-
 # Quick find for case insensitive file name matching.
 function qfind {
    find . -iname "*$1*" -not -name "*.sw?" -not -wholename "*/.git/*"  -not -name '*.class'   -type f
