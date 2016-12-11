@@ -23,6 +23,7 @@
    ds = diff --cached
    f = fetch
    g = grep
+   gl = grep -l
    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
    r = rebase
    rc = rebase --continue

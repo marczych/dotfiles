@@ -9,7 +9,19 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# Tmux aliases
+# Aliases
+
+alias cd_temp='cd $(mktemp -d)'
+alias g='git'
+alias gr='cd "$(git rev-parse --show-toplevel)"'
+alias ll='ls -l'
+alias lla='ls -la'
+alias ls='ls --color=always'
+alias ta='tattach'
+alias tk='tmux kill-session -t'
+alias tls='tmux ls'
+alias tsn='tmux display-message -p "#S"'
+alias unix_timestamp='date +%s'
 function tn {
    local session_name
    if [ -z "$1" ]; then
@@ -20,22 +32,6 @@ function tn {
 
    tmux new -s "$session_name"
 }
-
-alias ta='tattach'
-alias tls='tmux ls'
-alias tk='tmux kill-session -t'
-alias tsn='tmux display-message -p "#S"'
-
-alias ls='ls --color=always'
-alias ll='ls -l'
-alias lla='ls -la'
-alias swaps='find . -name "*.sw[^f]"'
-alias g='git'
-alias gr='cd "$(git rev-parse --show-toplevel)"'
-alias gf='g grep -l'
-
-alias cd_temp='cd $(mktemp -d)'
-alias unix_timestamp='date +%s'
 
 # To make git reset --hard @{u} slightly easier (git reset --hard $u).
 export u='@{u}'
