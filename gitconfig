@@ -9,30 +9,30 @@
 [color]
    ui = true
 [alias]
-   ds = diff --cached
-   st = status -sb
-   std = diff HEAD --stat
-   co = checkout
-   di = diff --patience
+   addp = add -p
+   alias = config --get-regexp ^alias\\.
+   ap = add -p
+   catpc = commit -a --amend -C HEAD
    ci = commit
    cia = commit -a
-   addp = add -p
-   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-   cur = rev-parse HEAD
+   co = checkout
+   copy-sha = "!git rev-parse HEAD | pbcopy"
    cp = cherry-pick
-   ap = add -p
-   rh = reset --hard
-   ur = reset --hard @{u}
+   cur = rev-parse HEAD
+   di = diff --patience
+   ds = diff --cached
+   f = fetch
+   g = grep
+   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
    r = rebase
    rc = rebase --continue
-   catpc = commit -a --amend -C HEAD
-   s = submodule
-   sui = submodule update --init
-   g = grep
    recent-branches = for-each-ref --sort=-committerdate refs/heads/
-   copy-sha = "!git rev-parse HEAD | pbcopy"
-   alias = config --get-regexp ^alias\\.
-   f = fetch
+   rh = reset --hard
+   s = submodule
+   st = status -sb
+   std = diff HEAD --stat
+   sui = submodule update --init
+   ur = reset --hard @{u}
 [push]
    default = current
 [merge]
