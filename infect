@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 git submodule update --init
 
 # Bashrc, zshrc, and inputrc
@@ -18,4 +20,4 @@ ln -f -s ~/dotfiles/vimrc ~/.vimrc
 rm -rf ~/.vim
 ln -f -s ~/dotfiles/vim ~/.vim
 
-echo "Infected."
+echo Infected.
