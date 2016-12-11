@@ -11,13 +11,14 @@ bindkey -M vicmd v edit-command-line
 
 # Tmux aliases
 function tn {
+   local session_name
    if [ -z "$1" ]; then
-      SESSION_NAME=$(date --iso-8601=seconds | sed 's/:/-/g')
+      session_name=$(date | sed 's/[: ]/-/g')
    else
-      SESSION_NAME="$1"
+      session_name="$1"
    fi
 
-   tmux new -s "$SESSION_NAME"
+   tmux new -s "$session_name"
 }
 
 alias ta='tattach'
