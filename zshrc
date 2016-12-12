@@ -119,7 +119,3 @@ function every {
       sleep "$rate"
    done
 }
-
-# Enable bash completion.
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
