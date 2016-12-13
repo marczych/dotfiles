@@ -33,6 +33,11 @@ function tn {
 
    tmux new -s "$session_name"
 }
+# Attach to an existing session matching any part of the name.
+function tattach {
+   local session_name="$(tmux ls | sed 's/:.*$//' | grep "$1")"
+   tmux attach -t "$session_name"
+}
 
 # To make git reset --hard @{u} slightly easier (git reset --hard $u).
 export u='@{u}'
