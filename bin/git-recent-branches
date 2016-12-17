@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -euo pipefail
+
+PS3='Select branch: #'
+
+recent_branches=$(
+    git reflog |
+    grep 'checkout:' |
+    sed 's/.*moving from \(.*\) to .*/\1/' |
+    awk '!x[$0]++' |
+    head -10
+)
+
+select branch in $recent_branches; do
+    if [ -n "$branch" ]; then
+        git checkout "$branch"
+        git st
+        exit 0
+    else
+        echo Invalid selection. Aborting...
+        exit 1
+    fi
+done

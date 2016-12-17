@@ -26,6 +26,7 @@
    gl = grep -l
    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
    r = rebase
+   rb = recent-branches
    rc = rebase --continue
    recent-branches = for-each-ref --sort=-committerdate refs/heads/
    rh = reset --hard
