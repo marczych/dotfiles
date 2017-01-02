@@ -38,6 +38,7 @@
 [push]
    default = current
 [merge]
+   conflictstyle = diff3
    tool = vimdiff
 [mergetool]
    keepBackup = false
