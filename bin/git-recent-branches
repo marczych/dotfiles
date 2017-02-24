@@ -2,19 +2,25 @@
 
 set -euo pipefail
 
+filter="${1:-}"
+
 PS3='Select branch: #'
 
-all_branches=$(
+branches=$(
     git reflog |
     grep 'checkout:' |
     sed 's/.*moving from \(.*\) to .*/\1/' |
     awk '!x[$0]++'
 )
 
+if [[ -n "$filter" ]]; then
+    branches=$(grep --ignore-case "$filter" <<< "$branches")
+fi
+
 # Separate the `head` command from generating the output because it sometimes
 # results in a 141 exit status due head exiting as soon as it sees 10 lines
 # which sends a SIGPIPE to the previous nodes in the pipeline.
-recent_branches=$(head --lines=10 <<< "$all_branches")
+recent_branches=$(head --lines=10 <<< "$branches")
 
 select branch in $recent_branches; do
     if [ -n "$branch" ]; then
