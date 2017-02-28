@@ -84,7 +84,7 @@ set noshowmode
 " Set to current directory.
 set path=./**
 " Don't complete these files.
-set wildignore=*.class,*.sw?
+set wildignore=*.class,*.sw?,*.pyc
 
 " Enable sane indent settings. Note: These can get overridden by EditorConfig.
 set autoindent
