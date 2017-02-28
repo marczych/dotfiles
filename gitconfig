@@ -25,6 +25,7 @@
    g = grep
    gl = grep -l
    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+   pfwl = push --force-with-lease
    r = rebase
    rb = recent-branches
    rc = rebase --continue
