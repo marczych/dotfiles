@@ -62,3 +62,6 @@
 [submodule "vim/bundle/vim-vue"]
 	path = vim/bundle/vim-vue
 	url = https://github.com/posva/vim-vue
+[submodule "vim/bundle/vim-sort-motion"]
+	path = vim/bundle/vim-sort-motion
+	url = https://github.com/christoomey/vim-sort-motion.git
