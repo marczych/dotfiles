@@ -19,8 +19,8 @@
    copy-sha = "!git rev-parse HEAD | pbcopy"
    cp = cherry-pick
    cur = rev-parse HEAD
-   di = diff --patience
-   ds = diff --cached
+   di = diff --patience --find-renames --find-copies
+   ds = diff --cached --find-renames --find-copies
    f = fetch
    g = grep
    gl = grep -l
