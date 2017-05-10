@@ -104,8 +104,6 @@ set cursorline
 set lazyredraw
 " Don't automatically resize windows when splitting.
 set noequalalways
-" Show line numbers.
-set number
 " Display row, column and % of document.
 set ruler
 " Keep 5 lines of context at the top and bottom of the cursor.
