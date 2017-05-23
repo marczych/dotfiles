@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Creates the provided branch name, resets it to origin/master (after fetching),
+# and sets up the remote tracking information.
+#
+# WARNING: This will blow away any uncommitted changes (staged or otherwise).
+
+set -euo pipefail
+
+branch="$1"
+
+git fetch
+git checkout -b "$branch"
+git reset --hard origin/master
+
+# Set the remote tracking branch.
+git config branch."$branch".remote origin
+git config branch."$branch".merge refs/heads/"$branch"

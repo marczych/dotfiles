@@ -32,6 +32,7 @@
    rc = rebase --continue
    rh = reset --hard
    s = submodule
+   sb = start-branch
    st = status -sb
    std = diff HEAD --stat
    sui = submodule update --init
