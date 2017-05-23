@@ -30,7 +30,6 @@
    r = rebase
    rb = recent-branches
    rc = rebase --continue
-   recent-branches = for-each-ref --sort=-committerdate refs/heads/
    rh = reset --hard
    s = submodule
    st = status -sb
