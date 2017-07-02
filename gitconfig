@@ -35,7 +35,7 @@
    sb = start-branch
    st = status -sb
    std = diff HEAD --stat
-   sui = submodule update --init
+   sui = submodule update --init --recursive
    ur = reset --hard @{u}
 [push]
    default = current
