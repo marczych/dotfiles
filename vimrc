@@ -7,6 +7,8 @@ call pathogen#helptags()
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java'] }
+" Prefer mypy for Python syntax checking.
+let g:syntastic_python_checkers = ['mypy', 'python']
 
 " Don't show the branch name because it's super long.
 let g:airline#extensions#branch#enabled = 0
