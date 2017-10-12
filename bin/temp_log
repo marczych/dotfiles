@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Given a URL, downloads it to a temporary directory and opens it in less.
+
+set -euo pipefail
+
+cd "$(mktemp --directory)"
+wget "$1"
+less *
