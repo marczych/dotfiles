@@ -15,9 +15,11 @@ ln -f -s ~/dotfiles/gitconfig ~/.gitconfig
 # Tmux
 ln -f -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
-# Vim stuffs.
+# Vim
 ln -f -s ~/dotfiles/vimrc ~/.vimrc
 rm -rf ~/.vim
 ln -f -s ~/dotfiles/vim ~/.vim
+mkdir -p ~/.config/nvim
+ln -f -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 
 echo Infected.
