@@ -46,3 +46,5 @@
    keepBackup = false
 [fetch]
    prune = true
+[diff]
+    renameLimit = 1000
