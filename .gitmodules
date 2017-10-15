@@ -74,3 +74,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "git-merged-branches"]
+	path = git-merged-branches
+	url = https://github.com/marczych/git-merged-branches.git
