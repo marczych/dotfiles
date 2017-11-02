@@ -77,3 +77,6 @@
 [submodule "git-merged-branches"]
 	path = git-merged-branches
 	url = https://github.com/marczych/git-merged-branches.git
+[submodule "vim/bundle/vim-terraform"]
+	path = vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
