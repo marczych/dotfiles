@@ -18,6 +18,8 @@ nmap <Leader>t :tabe %<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 " Move to the next tab.
 nmap <silent> <C-t> :tabn<CR>
+" Move to the next error from ALE.
+nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " Easier to get out of insert mode with 'kj'.
 imap kj <Esc>
