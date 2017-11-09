@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Simply copies the public key to the remote host and then SSHs to it.
+
+set -euo pipefail
+
+ssh-copy-id "$1"
+ssh "$1"
