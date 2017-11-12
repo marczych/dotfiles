@@ -1,2 +1,5 @@
-# Globally ignore swap files
+# Globally ignore swap files.
 *.sw?
+
+# Ignore MacOS directory files.
+**/*.DS_Store
