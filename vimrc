@@ -5,6 +5,8 @@ call pathogen#helptags()
 " Don't show the branch name because it's super long.
 let g:airline#extensions#branch#enabled = 0
 
+let NERDTreeShowHidden=1
+
 " Set the leader to <Space>.
 let mapleader = " "
 
