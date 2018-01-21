@@ -25,6 +25,8 @@ nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " Easier to get out of insert mode with 'kj'.
 imap kj <Esc>
+" Exit insert mode, write the buffer, and send an event.
+imap jw <Esc>:CommandBusWriteAndSend<CR>
 " Automatically insert the closing brace.
 imap {<CR> {<CR>}<Esc>O
 

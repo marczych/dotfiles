@@ -83,3 +83,6 @@
 [submodule "ssh-agent-canonicalize"]
 	path = ssh-agent-canonicalize
 	url = https://github.com/chpatton013/ssh-agent-canonicalize.git
+[submodule "vim/bundle/vim-command-bus"]
+	path = vim/bundle/vim-command-bus
+	url = https://github.com/marczych/vim-command-bus.git
