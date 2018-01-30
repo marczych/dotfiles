@@ -47,4 +47,4 @@
 [fetch]
     prune = true
 [diff]
-    renameLimit = 1000
+    renameLimit = 1000000
