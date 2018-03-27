@@ -103,6 +103,7 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -112,7 +113,6 @@ setopt HIST_IGNORE_DUPS       # Ignore immediate duplicates.
 setopt HIST_IGNORE_SPACE      # Do not save lines that start with a space.
 setopt HIST_NO_STORE          # Do not save commands with '!' (only the resulting auto-completed command).
 setopt HIST_VERIFY            # Auto-completion with '!' verifies on next line.
-setopt SHARE_HISTORY          # Share history between shells.
 
 export TERM="xterm-256color"
 
