@@ -86,3 +86,6 @@
 [submodule "vim/bundle/vim-command-bus"]
 	path = vim/bundle/vim-command-bus
 	url = https://github.com/marczych/vim-command-bus.git
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = https://github.com/junegunn/fzf
