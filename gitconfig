@@ -50,5 +50,4 @@
 [diff]
     renameLimit = 1000000
 [rerere]
-    autoupdate = true
     enabled = true
