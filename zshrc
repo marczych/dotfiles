@@ -12,7 +12,6 @@ bindkey '^R' history-incremental-search-backward
 
 # Aliases
 
-alias cd_temp='cd $(mktemp -d)'
 alias g='git'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias l='file-pager'
@@ -126,6 +125,18 @@ if [ "$(uname)" = "Darwin" ]; then
    # Macs aren't happy with --color=always.
    unalias ls
 fi
+
+function cd_temp {
+   local name; name="${1:-default}"
+   local date; date=$(date "+%Y-%m-%d.%H:%M:%S")
+   local template; template="${date}_${name}_XXX"
+
+   if [ "$(uname)" = "Darwin" ]; then
+       cd "$(mktemp -d -t "$template")"
+   else
+       cd "$(mktemp --tmpdir --directory "$template")"
+   fi
+}
 
 function every {
    rate="$1"
