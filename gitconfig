@@ -34,6 +34,7 @@
     rh = reset --hard
     s = submodule
     sb = start-branch
+    sha = rev-parse HEAD
     st = status -sb
     std = diff HEAD --stat
     sui = submodule update --init --recursive
