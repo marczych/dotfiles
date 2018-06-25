@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+if [[ $# == 0 || $1 == "-h" || $1 == "--help" ]]; then
+    echo "Usage: $0 file"
+    exit 0
+fi
+
 # If the argument isn't set, read from stdin.
 if [[ -z ${1+x} ]]; then
     pager
@@ -10,10 +15,14 @@ fi
 
 file="$1"
 
-if [[ $file =~ ^http(s)? ]]; then
+if [[ $file =~ ^http(s)://? ]]; then
     temp_file=$(mktemp)
-    wget "$file" --output-document "$temp_file"
+    wget --quiet "$file" --output-document "$temp_file"
     file=$temp_file
 fi
 
-pager "$file"
+if hash pager 2>/dev/null; then
+    pager "$file"
+else
+    less "$file"
+fi
