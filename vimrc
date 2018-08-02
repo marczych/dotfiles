@@ -22,6 +22,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <silent> <C-t> :tabn<CR>
 " Move to the next error from ALE.
 nmap <silent> <C-m> <Plug>(ale_next_wrap)
+" Start FZF with a Ctrl-F.
+nmap <silent> <C-f> :FZF<CR>
 
 " Easier to get out of insert mode with 'kj'.
 imap kj <Esc>
