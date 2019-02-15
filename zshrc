@@ -128,7 +128,7 @@ fi
 
 function cd_temp {
    local name; name="${1:-default}"
-   local date; date=$(date "+%Y-%m-%d.%H:%M:%S")
+   local date; date=$(date "+%Y-%m-%d.%H-%M-%S")
    local template; template="${date}_${name}_XXX"
 
    if [ "$(uname)" = "Darwin" ]; then
