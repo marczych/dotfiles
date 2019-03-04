@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# The old commit that is good.
+start="$1"
+# The new commit that is bad.
+end="$2"
+
+git bisect start
+
+git bisect skip $(
+    comm -13 \
+    <(git rev-list --first-parent "$start".."$end" | sort) \
+    <(git rev-list "$start".."$end" | sort)
+)
+
+git bisect bad "$end"
+git bisect good "$start"
