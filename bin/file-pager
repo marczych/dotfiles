@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+# If the argument isn't set, read from stdin.
+if [[ -z ${1+x} ]]; then
+    pager
+    exit 0
+fi
+
 file="$1"
 
 if [[ $file =~ ^http(s)? ]]; then
