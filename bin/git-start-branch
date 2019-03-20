@@ -9,7 +9,7 @@ set -euo pipefail
 
 branch="$1"
 
-git fetch
+git fetch origin master
 git checkout -b "$branch"
 git reset --hard origin/master
 
