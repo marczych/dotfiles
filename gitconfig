@@ -23,6 +23,7 @@
     dim = diff --patience --find-renames --find-copies origin/master...
     ds = diff --cached --find-renames --find-copies
     f = fetch
+    fm = fetch origin master
     g = grep --line-number
     gl = grep -l
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
