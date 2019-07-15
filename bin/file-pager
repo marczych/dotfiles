@@ -15,7 +15,7 @@ fi
 
 file="$1"
 
-if [[ $file =~ ^http(s)://? ]]; then
+if [[ $file =~ ^http(s)?:// ]]; then
     temp_file=$(mktemp)
     wget --quiet "$file" --output-document "$temp_file"
     file=$temp_file
