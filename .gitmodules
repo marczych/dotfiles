@@ -94,4 +94,4 @@
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "tmux-colors-solarized"]
 	path = tmux-colors-solarized
-	url = git@github.com:darcyparker/tmux-colors-solarized
+	url = git@github.com:seebi/tmux-colors-solarized
