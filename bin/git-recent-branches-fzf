@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -euo pipefail
+
+git checkout "$(git reflog | \
+    grep 'checkout:' | \
+    sed 's/.*moving from \(.*\) to .*/\1/' | \
+    awk '!x[$0]++' | \
+    fzf +s
+)"
