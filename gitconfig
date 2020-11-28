@@ -29,6 +29,7 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     m = merge --no-edit
     pfwl = push --force-with-lease
+    pl = push --set-upstream
     r = rebase
     rb = recent-branches
     rc = rebase --continue
