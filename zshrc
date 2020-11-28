@@ -31,6 +31,7 @@ alias ta='tattach'
 alias tk='tmux kill-session -t'
 alias tls='tmux ls'
 alias tsn='tmux display-message -p "#S"'
+alias tsb='tmux show-buffer'
 alias unix_timestamp='date +%s'
 alias vcb='~/.vim/bundle/vim-command-bus/bin/vim-command-bus'
 
