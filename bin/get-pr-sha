@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+pr=$1
+
+git fetch origin "refs/pull/$pr/head"
+git rev-parse FETCH_HEAD
