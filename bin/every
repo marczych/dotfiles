@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rate="$1"
+shift
+
+while true; do
+  date
+  "$@"
+  sleep "$rate"
+done
