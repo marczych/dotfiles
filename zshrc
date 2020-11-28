@@ -58,11 +58,6 @@ export om='origin/master'
 
 PATH="$HOME/dotfiles/bin/machine-specific:$PATH"
 
-# Quick find for case insensitive file name matching.
-function qfind {
-   find . -iname "*$1*" -not -name "*.sw?" -not -wholename "*/.git/*"  -not -name '*.class'   -type f
-}
-
 # User specific aliases and functions
 PATH="$HOME/dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 
