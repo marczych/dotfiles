@@ -58,6 +58,11 @@ export om='origin/master'
 
 PATH="$HOME/dotfiles/bin/machine-specific:$PATH"
 
+function start-ssh-agent {
+   eval $(ssh-agent)
+   ssh-add
+}
+
 # User specific aliases and functions
 PATH="$HOME/dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 
