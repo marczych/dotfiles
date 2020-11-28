@@ -32,6 +32,10 @@ imap jw <Esc>:CommandBusWriteAndSend<CR>
 " Automatically insert the closing brace.
 imap {<CR> {<CR>}<Esc>O
 
+" In command mode, make %% expand to the directory that the current file is
+" in.
+cabbr <expr> %% expand('%:p:h')
+
 " General Vim settings.
 set encoding=utf-8
 behave xterm
