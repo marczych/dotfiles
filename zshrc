@@ -139,13 +139,16 @@ function cd_temp {
    fi
 }
 
-function every {
-   rate="$1"
-   shift
+# Enable bash completion.
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
-   while true; do
-      date
-      "$@"
-      sleep "$rate"
-   done
+function gmb() {
+   git show "$(git merge-base "$@")"
 }
+
+REPORTTIME=5
+
+if [[ -f ~/dotfiles/zshrc.machine-specific ]]; then
+   source ~/dotfiles/zshrc.machine-specific
+fi

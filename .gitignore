@@ -1,1 +1,4 @@
 *.netrwhist
+
+# Ignore all machine-specific files.
+*.machine-specific
