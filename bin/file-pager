@@ -22,7 +22,7 @@ if [[ $file =~ ^http(s)?:// ]]; then
 fi
 
 if hash pager 2>/dev/null; then
-    pager "$file"
+    exec pager "$file"
 else
-    less "$file"
+    exec less "$file"
 fi

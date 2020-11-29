@@ -6,4 +6,4 @@ set -euo pipefail
 # delay so it will open once the server is running.
 (sleep 1 && open http://localhost:8000) &
 
-python2 -m SimpleHTTPServer
+exec python2 -m SimpleHTTPServer

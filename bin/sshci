@@ -5,4 +5,4 @@
 set -euo pipefail
 
 ssh-copy-id "$1"
-ssh "$1"
+exec ssh "$1"

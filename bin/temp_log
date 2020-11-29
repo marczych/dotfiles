@@ -6,4 +6,4 @@ set -euo pipefail
 
 cd "$(mktemp --directory)"
 wget "$1"
-less *
+exec less *
