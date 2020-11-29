@@ -11,6 +11,13 @@ ln -f -s ~/dotfiles/inputrc ~/.inputrc
 
 # Git
 ln -f -s ~/dotfiles/gitconfig ~/.gitconfig
+if [ "$(uname)" = "Darwin" ]; then
+    lazygit_config_directory=~/Library/Application\ Support/jesseduffield/lazygit
+else
+    lazygit_config_directory=~/.config/jesseduffield/lazygit
+fi
+mkdir -p "$lazygit_config_directory"
+ln -f -s ~/dotfiles/lazygit-config.yml "$lazygit_config_directory"/config.yml
 
 # Tmux
 ln -f -s ~/dotfiles/tmux.conf ~/.tmux.conf
