@@ -100,8 +100,11 @@ set backspace=2
 syntax enable
 set t_Co=256
 " Use the solarized light color scheme.
-colorscheme solarized
 set background=light
+colorscheme solarized
+highlight SignColumn ctermbg=lightgray
+highlight SignColumn guibg=lightgray
+
 " Disable error bells.
 set noerrorbells
 
