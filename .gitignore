@@ -2,3 +2,6 @@
 
 # Ignore all machine-specific files.
 *.machine-specific
+
+# No need to commit the vim spell files.
+vim/spell/
