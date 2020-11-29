@@ -3,5 +3,6 @@
 # Ignore all machine-specific files.
 *.machine-specific
 
-# No need to commit the vim spell files.
+# No need to commit the vim spell files or vim-plug plugins.
 vim/spell/
+vim/plugged/
