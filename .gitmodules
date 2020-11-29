@@ -1,9 +1,6 @@
 [submodule "solarized"]
 	path = solarized
 	url = https://github.com/altercation/solarized.git
-[submodule "tpm"]
-	path = tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "git-merged-branches"]
 	path = git-merged-branches
 	url = https://github.com/marczych/git-merged-branches.git
