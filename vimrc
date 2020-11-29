@@ -1,11 +1,13 @@
 " Plugin config.
 call plug#begin('~/.vim/plugged')
+
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
+Plug 'junegunn/fzf'
 Plug 'leafgarland/typescript-vim'
 Plug 'marczych/vim-lose'
 Plug 'michaeljsmith/vim-indent-object'
@@ -22,6 +24,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
+
 call plug#end()
 
 " Don't show the branch name because it's super long.
