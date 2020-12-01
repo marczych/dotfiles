@@ -5,7 +5,7 @@
     user = marczych
 [core]
     excludesfile = ~/dotfiles/gitignore
-    editor = /usr/bin/vim
+    editor = /usr/local/bin/nvim
 [color]
     ui = true
 [alias]
@@ -45,8 +45,9 @@
     default = current
 [merge]
     conflictstyle = diff3
-    tool = vimdiff
-[mergetool]
+    tool = neovimdiff
+[mergetool "neovimdiff"]
+    cmd = /usr/local/bin/nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
     keepBackup = false
 [fetch]
     prune = true
