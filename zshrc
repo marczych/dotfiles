@@ -85,8 +85,6 @@ setopt HIST_IGNORE_SPACE      # Do not save lines that start with a space.
 setopt HIST_NO_STORE          # Do not save commands with '!' (only the resulting auto-completed command).
 setopt HIST_VERIFY            # Auto-completion with '!' verifies on next line.
 
-export TERM="xterm-256color"
-
 if [ "$(uname)" = "Darwin" ]; then
    # Macs aren't happy with --color=always.
    unalias ls
