@@ -6,3 +6,6 @@
 # No need to commit the vim spell files or vim-plug plugins.
 vim/spell/
 vim/plugged/
+
+# Don't worry about vimplug.
+vim/autoload/plug.vim
