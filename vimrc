@@ -49,6 +49,8 @@ nmap <silent> <C-t> :tabn<CR>
 nmap <silent> <C-m> <Plug>(ale_next_wrap)
 " Start FZF with a Ctrl-F.
 nmap <silent> <C-f> :FZF<CR>
+" Open the current directory/folder in the current pane.
+nmap <Leader>f :e %%/<CR>
 
 " Easier to get out of insert mode with 'kj'.
 imap kj <Esc>
