@@ -9,7 +9,7 @@
 	url = https://github.com/chpatton013/ssh-agent-canonicalize.git
 [submodule "tmux-colors-solarized"]
 	path = tmux-colors-solarized
-	url = git@github.com:seebi/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git
 [submodule "powerlevel10k"]
 	path = powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
