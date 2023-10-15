@@ -150,6 +150,8 @@ set showmatch
 set wildmenu
 " Soft wrap lines.
 set wrap
+" Don't allow buffers to be hidden without prompting to save them.
+set nohidden
 
 " Display a line at 80 columns.
 if exists('+colorcolumn')
