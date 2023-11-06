@@ -1,38 +1,20 @@
 " Plugin config.
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf'
-Plug 'leafgarland/typescript-vim'
-Plug 'marczych/vim-lose'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'posva/vim-vue'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 
 call plug#end()
 
-" Don't show the branch name because it's super long.
-let g:airline#extensions#branch#enabled = 0
-
 let NERDTreeShowHidden=1
-
-" Set the leader to <Space>.
-let mapleader = " "
 
 " d and u make the window vertically smaller and bigger, respectively.
 nmap <Leader>d 1000<C-W>-
@@ -41,11 +23,6 @@ nmap <Leader>u 20<C-W>+
 nmap <Leader>p :set invpaste<CR>:set paste?<CR>
 " Open the current buffer in a new tab.
 nmap <Leader>t :tabe %<CR>
-nmap <C-n> :NERDTreeToggle<CR>
-" Move to the next tab.
-nmap <silent> <C-t> :tabn<CR>
-" Move to the next error from ALE.
-nmap <silent> <C-m> <Plug>(ale_next_wrap)
 " Start FZF with a Ctrl-F.
 nmap <silent> <C-f> :FZF<CR>
 " Open the current directory/folder in the current pane.
@@ -53,8 +30,6 @@ nmap <Leader>f :e %%/<CR>
 
 " Easier to get out of insert mode with 'kj'.
 imap kj <Esc>
-" Exit insert mode, write the buffer, and send an event.
-imap jw <Esc>:CommandBusWriteAndSend<CR>
 " Automatically insert the closing brace.
 imap {<CR> {<CR>}<Esc>O
 
@@ -65,8 +40,6 @@ cabbr <expr> %% expand('%:p:h')
 " General Vim settings.
 set encoding=utf-8
 behave xterm
-" Don't try to preserve compatibility with vi.
-set nocompatible
 
 " Live dangerously (disable all back up files).
 set nobackup
@@ -77,11 +50,6 @@ set noswapfile
 command! EA :checktime
 " Automatically load changed files.
 set autoread
-
-" Enable automatic file type goodness.
-filetype on
-filetype plugin on
-filetype indent on
 
 " Highlight all search matches.
 set hlsearch
@@ -97,12 +65,6 @@ set cpoptions+=$
 " Allow backspacing without limits (in particular past the beginning of insert).
 set backspace=2
 
-" Enable syntax highlighting and all colors.
-syntax enable
-set t_Co=256
-highlight SignColumn ctermbg=lightgray
-highlight SignColumn guibg=lightgray
-
 " Disable error bells.
 set noerrorbells
 
@@ -112,11 +74,6 @@ set laststatus=2
 set modeline
 " Powerline already displays the mode.
 set noshowmode
-
-" Set to current directory.
-set path=./**
-" Don't complete these files.
-set wildignore=*.class,*.sw?,*.pyc
 
 " Enable sane indent settings. Note: These can get overridden by EditorConfig.
 set autoindent
@@ -158,10 +115,6 @@ endif
 " Basic auto completion settings.
 set complete=.,w,b,u,t
 set dictionary=/usr/share/dict/words
-
-" Set filetypes for some patterns that it doesn't match by default.
-autocmd BufNewFile,BufRead *.gradle setlocal filetype=groovy
-autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 
 " Enable dictionary completion and spell mode for prose files.
 autocmd FileType markdown,gitcommit,text setlocal complete+=k spell
