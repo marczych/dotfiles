@@ -1,18 +1,9 @@
-[submodule "solarized"]
-	path = solarized
-	url = https://github.com/altercation/solarized.git
 [submodule "git-merged-branches"]
 	path = git-merged-branches
 	url = https://github.com/marczych/git-merged-branches.git
 [submodule "ssh-agent-canonicalize"]
 	path = ssh-agent-canonicalize
 	url = https://github.com/chpatton013/ssh-agent-canonicalize.git
-[submodule "tmux-colors-solarized"]
-	path = tmux-colors-solarized
-	url = https://github.com/seebi/tmux-colors-solarized.git
 [submodule "powerlevel10k"]
 	path = powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "dircolors-solarized"]
-	path = dircolors-solarized
-	url = https://github.com/seebi/dircolors-solarized.git

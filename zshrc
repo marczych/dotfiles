@@ -118,7 +118,3 @@ fi
 
 source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 source ~/dotfiles/p10k.zsh
-
-if [ "$(uname)" != "Darwin" ]; then
-    eval `dircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-light`
-fi

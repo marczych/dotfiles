@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'editorconfig/editorconfig-vim'
@@ -101,9 +100,6 @@ set backspace=2
 " Enable syntax highlighting and all colors.
 syntax enable
 set t_Co=256
-" Use the solarized light color scheme.
-set background=light
-colorscheme solarized
 highlight SignColumn ctermbg=lightgray
 highlight SignColumn guibg=lightgray
 
