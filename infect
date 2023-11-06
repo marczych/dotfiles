@@ -24,5 +24,6 @@ ln -f -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.config/nvim
 ln -f -s ~/dotfiles/nvim.lua ~/.config/nvim/init.lua
+ln -f -s ~/dotfiles/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
 echo Infected.
