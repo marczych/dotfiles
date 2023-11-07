@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-sleuth',
+  'tpope/vim-surround',
 
   {
     'neovim/nvim-lspconfig',
@@ -514,7 +515,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 
 call plug#end()
