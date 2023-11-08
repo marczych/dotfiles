@@ -127,6 +127,8 @@ require('lazy').setup({
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      'debugloop/telescope-undo.nvim',
+
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.
       -- Only load if `make` is available. Make sure you have the system
       -- requirements installed.
@@ -195,6 +197,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
+  extensions = {
+    undo = {
+      mappings = {
+        i = {
+          ["<cr>"] = require("telescope-undo.actions").restore
+        },
+      },
+    },
+  },
   defaults = {
     mappings = {
       i = {
@@ -207,6 +218,8 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+require("telescope").load_extension("undo")
+
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -512,7 +525,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'scrooloose/nerdtree'
-Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'w0rp/ale'
