@@ -45,8 +45,7 @@ set "status-right-attr" "none"
 set "message-fg" "$onedark_white"
 set "message-bg" "$onedark_black"
 
-set "message-command-fg" "$onedark_white"
-set "message-command-bg" "$onedark_black"
+set "message-style" "bg=$onedark_black,fg=$onedark_red"
 
 set "status-attr" "none"
 set "status-left-attr" "none"
