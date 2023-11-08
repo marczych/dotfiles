@@ -62,7 +62,7 @@ setw "mode-style" "fg=$onedark_black,bg=$onedark_blue"
 
 setw "window-status-separator" ""
 
-set "window-style" "fg=$onedark_comment_grey"
+set "window-style" "fg=$onedark_white"
 set "window-active-style" "fg=$onedark_white"
 
 set "pane-border-fg" "$onedark_white"
