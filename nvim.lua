@@ -21,6 +21,12 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-sleuth',
   'tpope/vim-surround',
+  'christoomey/vim-sort-motion',
+  'editorconfig/editorconfig-vim',
+  'michaeljsmith/vim-indent-object',
+  'tpope/vim-repeat',
+  'tpope/vim-speeddating',
+  'tpope/vim-vinegar',
 
   {
     'neovim/nvim-lspconfig',
@@ -513,22 +519,3 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'markdown', 'gitcommit', 'text' },
   callback = function() vim.opt.spell = true end
 })
--- autocmd FileType markdown,gitcommit,text setlocal complete+=k spell
-
---[[
--- Legacy Vimrc:
-" Plugin config.
-call plug#begin('~/.vim/plugged')
-
-Plug 'christoomey/vim-sort-motion'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-speeddating'
-
-call plug#end()
-
-let NERDTreeShowHidden=1
-
---]]
