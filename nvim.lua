@@ -522,7 +522,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-sort-motion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-repeat'
