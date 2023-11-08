@@ -175,6 +175,7 @@ vim.defer_fn(function()
       'lua',
       'python',
       'rust',
+      'starlark',
       'terraform',
       'tsx',
       'typescript',
