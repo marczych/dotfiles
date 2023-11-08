@@ -59,6 +59,8 @@ setw "window-status-activity-bg" "$onedark_black"
 setw "window-status-activity-fg" "$onedark_black"
 setw "window-status-activity-attr" "none"
 
+setw "mode-style" "fg=$onedark_black,bg=$onedark_blue"
+
 setw "window-status-separator" ""
 
 set "window-style" "fg=$onedark_comment_grey"
