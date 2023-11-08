@@ -526,7 +526,6 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
-Plug 'w0rp/ale'
 
 call plug#end()
 
