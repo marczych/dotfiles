@@ -172,6 +172,7 @@ vim.defer_fn(function()
       'go',
       'java',
       'javascript',
+      'json',
       'lua',
       'python',
       'rust',
@@ -181,6 +182,7 @@ vim.defer_fn(function()
       'typescript',
       'vim',
       'vimdoc',
+      'yaml',
     },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
