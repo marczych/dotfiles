@@ -10,6 +10,7 @@ onedark_white="#aab2bf"
 onedark_green="#98c379"
 onedark_visual_grey="#3e4452"
 onedark_comment_grey="#5c6370"
+onedark_purple="#c678dd"
 
 get() {
    local option=$1
@@ -89,4 +90,4 @@ set "status-right" "#[fg=$onedark_white,bg=$onedark_black,nounderscore,noitalics
 set "status-left" "#[fg=$onedark_black,bg=$onedark_green,bold] #S #I.#P #{prefix_highlight}#[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]"
 
 set "window-status-format" "#[fg=$onedark_black,bg=$onedark_black,nobold,nounderscore,noitalics]#[fg=$onedark_white,bg=$onedark_black] #I  #W #[fg=$onedark_black,bg=$onedark_black,nobold,nounderscore,noitalics]"
-set "window-status-current-format" "#[fg=$onedark_black,bg=$onedark_visual_grey,nobold,nounderscore,noitalics]#[fg=$onedark_white,bg=$onedark_visual_grey,nobold] #I  #W #[fg=$onedark_visual_grey,bg=$onedark_black,nobold,nounderscore,noitalics]"
+set "window-status-current-format" "#[fg=$onedark_black,bg=$onedark_purple,nobold,nounderscore,noitalics]#[fg=$onedark_black,bg=$onedark_purple,nobold] #I  #W #[fg=$onedark_purple,bg=$onedark_black,nobold,nounderscore,noitalics]"
