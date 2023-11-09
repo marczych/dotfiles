@@ -152,6 +152,10 @@ require('telescope').setup {
       i = {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
+        ['<C-q>'] = (
+          require("telescope.actions").smart_send_to_qflist +
+          require("telescope.actions").open_qflist
+        ),
       },
     },
   },
