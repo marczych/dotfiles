@@ -420,10 +420,6 @@ vim.opt.list = true
 -- Highlight the current line.
 vim.opt.cursorline = true
 
--- Show relative line numbers.
-vim.opt.number = true
-vim.opt.relativenumber = true
-
 -- Don't always redraw (in macros, etc. in particular).
 vim.opt.lazyredraw = true
 
