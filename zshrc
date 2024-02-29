@@ -71,7 +71,7 @@ function start-ssh-agent {
 }
 
 # User specific aliases and functions
-PATH="$HOME/dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+PATH="$HOME/dotfiles/bin:$PATH"
 
 if command -v nvim > /dev/null 2>&1; then
     export EDITOR=nvim
