@@ -24,6 +24,7 @@ require('lazy').setup({
   'tpope/vim-speeddating',
   'tpope/vim-surround',
   'tpope/vim-vinegar',
+  'axkirillov/easypick.nvim',
   { 'folke/which-key.nvim', opts = {} },
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
   { 'numToStr/Comment.nvim', opts = {} },
@@ -166,6 +167,22 @@ require('telescope').setup {
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 require("telescope").load_extension("undo")
+local easypick = require("easypick")
+easypick.setup({
+  pickers = {
+    {
+      name = "git_status",
+      command = "git status --porcelain | cut -c4-",
+      previewer = easypick.previewers.branch_diff({base_branch = 'HEAD'})
+    },
+
+    {
+      name = "changed_files",
+      command = "git diff --name-only $(git merge-base HEAD origin/master)",
+      previewer = easypick.previewers.branch_diff({base_branch = 'origin/master'})
+    },
+  }
+})
 
 
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
@@ -355,6 +372,8 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>cf', '<cmd>Easypick changed_files<CR>', { desc = '[C]hanged [F]iles' })
+vim.keymap.set('n', '<leader>gs', '<cmd>Easypick git_status<CR>', { desc = '[G]it [S]tatus' })
 
 -- Highlight yanked text.
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
