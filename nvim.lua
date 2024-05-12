@@ -400,6 +400,9 @@ vim.o.undofile = true
 vim.keymap.set('n', '<leader>d', '1000<C-W>-')
 vim.keymap.set('n', '<leader>u', '20<C-W>+')
 
+-- Make the current buffer executable.
+vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>')
+
 -- Open the current buffer in a new tab.
 vim.keymap.set('n', '<leader>t', '<cmd>tabe %<CR>')
 
