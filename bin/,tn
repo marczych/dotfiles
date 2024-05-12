@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [ -z "$1" ]; then
+  session_name=$(date | sed 's/[: ]/-/g')
+else
+  session_name="$1"
+fi
+
+tmux new -s "$session_name"

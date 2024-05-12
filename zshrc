@@ -33,26 +33,9 @@ alias ll='ls -l'
 alias lla='ls -la'
 alias ls='ls --color=auto'
 alias ,l=',file-pager'
-alias ,ta='tattach'
 alias ,tls='tmux ls'
 alias ,tsb='tmux show-buffer'
 alias ,unix_timestamp='date +%s'
-
-function tn {
-   local session_name
-   if [ -z "$1" ]; then
-      session_name=$(date | sed 's/[: ]/-/g')
-   else
-      session_name="$1"
-   fi
-
-   tmux new -s "$session_name"
-}
-# Attach to an existing session matching any part of the name.
-function tattach {
-   local session_name="$(tmux ls | sed 's/:.*$//' | grep "$1")"
-   tmux attach -t "$session_name"
-}
 
 # To make git reset --hard @{u} slightly easier (git reset --hard $u).
 export u='@{u}'
