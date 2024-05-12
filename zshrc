@@ -32,7 +32,7 @@ alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias l='file-pager'
 alias ll='ls -l'
 alias lla='ls -la'
-alias ls='ls --color=always'
+alias ls='ls --color=auto'
 alias ta='tattach'
 alias tls='tmux ls'
 alias tsb='tmux show-buffer'
@@ -82,11 +82,6 @@ setopt HIST_IGNORE_DUPS       # Ignore immediate duplicates.
 setopt HIST_IGNORE_SPACE      # Do not save lines that start with a space.
 setopt HIST_NO_STORE          # Do not save commands with '!' (only the resulting auto-completed command).
 setopt HIST_VERIFY            # Auto-completion with '!' verifies on next line.
-
-if [ "$(uname)" = "Darwin" ]; then
-   # Macs aren't happy with --color=always.
-   unalias ls
-fi
 
 function cd_temp {
    local name; name="${1:-default}"
