@@ -29,14 +29,14 @@ hist() {
 # Aliases
 alias g='git'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
-alias l='file-pager'
 alias ll='ls -l'
 alias lla='ls -la'
 alias ls='ls --color=auto'
-alias ta='tattach'
-alias tls='tmux ls'
-alias tsb='tmux show-buffer'
-alias unix_timestamp='date +%s'
+alias ,l=',file-pager'
+alias ,ta='tattach'
+alias ,tls='tmux ls'
+alias ,tsb='tmux show-buffer'
+alias ,unix_timestamp='date +%s'
 
 function tn {
    local session_name
