@@ -66,7 +66,7 @@ setopt HIST_IGNORE_SPACE      # Do not save lines that start with a space.
 setopt HIST_NO_STORE          # Do not save commands with '!' (only the resulting auto-completed command).
 setopt HIST_VERIFY            # Auto-completion with '!' verifies on next line.
 
-function cd_temp {
+function ,cd-temp {
    local name; name="${1:-default}"
    local date; date=$(date "+%Y-%m-%d.%H-%M-%S")
    local template; template="${date}_${name}_XXX"
