@@ -8,4 +8,4 @@ else
   session_name="$1"
 fi
 
-tmux new -s "$session_name"
+exec tmux new -s "$session_name"

@@ -4,4 +4,4 @@ set -euo pipefail
 
 # Attach to an existing session matching any part of the name.
 session_name="$(tmux ls | sed 's/:.*$//' | grep "$1")"
-tmux attach -t "$session_name"
+exec tmux attach -t "$session_name"
