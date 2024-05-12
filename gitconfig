@@ -42,6 +42,8 @@
     std = diff HEAD --stat
     sui = submodule update --init --recursive
     ur = reset --hard @{u}
+[log]
+    date = local
 [push]
     default = current
 [merge]
