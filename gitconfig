@@ -27,6 +27,7 @@
     g = grep --line-number
     gl = grep -l
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lgm = lg origin/master..
     m = merge --no-edit
     pfwl = push --force-with-lease
     pl = push --set-upstream
