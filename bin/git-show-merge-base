@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -euo pipefail
+
+exec git show "$(git merge-base "$@")"

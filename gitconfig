@@ -38,6 +38,7 @@
     s = submodule
     sb = start-branch
     sha = rev-parse HEAD
+    smb = show-merge-base
     st = status -sb
     std = diff HEAD --stat
     sui = submodule update --init --recursive

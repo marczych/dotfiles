@@ -81,10 +81,6 @@ function ,cd-temp {
    fi
 }
 
-function gmb() {
-   git show "$(git merge-base "$@")"
-}
-
 if [[ -f ~/dotfiles/zshrc.machine-specific ]]; then
    source ~/dotfiles/zshrc.machine-specific
 fi
