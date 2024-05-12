@@ -27,7 +27,6 @@ hist() {
 }
 
 # Aliases
-
 alias g='git'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias l='file-pager'
@@ -35,12 +34,9 @@ alias ll='ls -l'
 alias lla='ls -la'
 alias ls='ls --color=always'
 alias ta='tattach'
-alias tk='tmux kill-session -t'
 alias tls='tmux ls'
-alias tsn='tmux display-message -p "#S"'
 alias tsb='tmux show-buffer'
 alias unix_timestamp='date +%s'
-alias vcb='~/.vim/bundle/vim-command-bus/bin/vim-command-bus'
 
 function tn {
    local session_name
@@ -64,11 +60,6 @@ export u='@{u}'
 export om='origin/master'
 
 PATH="$HOME/dotfiles/bin/machine-specific:$PATH"
-
-function start-ssh-agent {
-   eval $(ssh-agent)
-   ssh-add
-}
 
 # User specific aliases and functions
 PATH="$HOME/dotfiles/bin:$PATH"
