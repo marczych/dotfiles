@@ -17,14 +17,24 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 bindkey '^R' history-incremental-search-backward
 
-hist() {
-    print -z $(
-        ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
-        fzf +s --tac | \
-        sed -r 's/ *[0-9]*\*? *//' | \
-        sed -r 's/\\/\\\\/g'
-    )
-}
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt APPEND_HISTORY         # Do not overwrite.
+setopt EXTENDED_HISTORY       # Save time and duration of execution.
+setopt HIST_IGNORE_DUPS       # Ignore immediate duplicates.
+setopt HIST_IGNORE_SPACE      # Do not save lines that start with a space.
+setopt HIST_NO_STORE          # Do not save commands with '!' (only the resulting auto-completed command).
+setopt HIST_VERIFY            # Auto-completion with '!' verifies on next line.
+
+# Enable bash completion.
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+REPORTTIME=5
+
+export CLICOLOR=1
 
 # Aliases
 alias g='git'
@@ -42,10 +52,7 @@ export u='@{u}'
 # To make things like `git diff origin/master...` slightly easier.
 export om='origin/master'
 
-PATH="$HOME/dotfiles/bin/machine-specific:$PATH"
-
-# User specific aliases and functions
-PATH="$HOME/dotfiles/bin:$PATH"
+PATH="$HOME/dotfiles/bin:$HOME/dotfiles/bin/machine-specific:$PATH"
 
 if command -v nvim > /dev/null 2>&1; then
     export EDITOR=nvim
@@ -53,18 +60,14 @@ else
     export EDITOR=vim
 fi
 
-export CLICOLOR=1
-
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-
-setopt APPEND_HISTORY         # Do not overwrite.
-setopt EXTENDED_HISTORY       # Save time and duration of execution.
-setopt HIST_IGNORE_DUPS       # Ignore immediate duplicates.
-setopt HIST_IGNORE_SPACE      # Do not save lines that start with a space.
-setopt HIST_NO_STORE          # Do not save commands with '!' (only the resulting auto-completed command).
-setopt HIST_VERIFY            # Auto-completion with '!' verifies on next line.
+function ,hist {
+    print -z $(
+        ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
+        fzf +s --tac | \
+        sed -r 's/ *[0-9]*\*? *//' | \
+        sed -r 's/\\/\\\\/g'
+    )
+}
 
 function ,cd-temp {
    local name; name="${1:-default}"
@@ -78,15 +81,9 @@ function ,cd-temp {
    fi
 }
 
-# Enable bash completion.
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-
 function gmb() {
    git show "$(git merge-base "$@")"
 }
-
-REPORTTIME=5
 
 if [[ -f ~/dotfiles/zshrc.machine-specific ]]; then
    source ~/dotfiles/zshrc.machine-specific
