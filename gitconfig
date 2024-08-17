@@ -5,7 +5,6 @@
     user = marczych
 [core]
     excludesfile = ~/dotfiles/gitignore
-    editor = /usr/local/bin/nvim
 [color]
     ui = true
 [alias]

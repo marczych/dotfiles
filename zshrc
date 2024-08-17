@@ -60,6 +60,8 @@ else
     export EDITOR=vim
 fi
 
+export GIT_EDITOR=$EDITOR
+
 function ,hist {
     print -z $(
         ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
