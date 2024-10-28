@@ -327,6 +327,9 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup()
 
 cmp.setup {
+  completion = {
+    autocomplete = false,
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
