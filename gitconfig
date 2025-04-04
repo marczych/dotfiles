@@ -5,6 +5,11 @@
     user = marczych
 [core]
     excludesfile = ~/dotfiles/gitignore
+    ui = auto
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
 [color]
     ui = true
 [alias]
@@ -18,9 +23,9 @@
     copy-sha = "!git rev-parse HEAD | pbcopy"
     cp = cherry-pick
     cur = rev-parse HEAD
-    di = diff --patience --find-renames --find-copies
-    dim = diff --patience --find-renames --find-copies origin/master...
-    ds = diff --cached --find-renames --find-copies
+    di = diff
+    dim = diff origin/master...
+    ds = diff --cached
     f = fetch
     fm = fetch origin master
     g = grep --line-number
@@ -47,14 +52,26 @@
 [push]
     default = current
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
     tool = neovimdiff
 [mergetool "neovimdiff"]
     cmd = /usr/local/bin/nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
     keepBackup = false
 [fetch]
     prune = true
+    pruneTags = true
 [diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
     renameLimit = 1000000
+    renames = copies
 [rerere]
     enabled = true
+    autoUpdate = true
+[commit]
+    verbose = true
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
