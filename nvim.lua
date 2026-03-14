@@ -418,6 +418,17 @@ vim.keymap.set('i', 'kj', '<Esc>')
 -- Automatically insert the closing brace.
 vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O')
 
+-- `gl` on a visual select to print out a `git log -L` command for that range.
+vim.keymap.set('v', 'gl', function()
+  local start_line = vim.fn.line('v')
+  local end_line = vim.fn.line('.')
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+  local file = vim.fn.expand('%:.')
+  print('git log -L' .. start_line .. ',' .. end_line .. ':' .. file)
+end, { desc = 'Print git log -L command for selection' })
+
 -- Live dangerously (disable all back up files).
 vim.opt.backup = false
 vim.opt.writebackup = false
