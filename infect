@@ -4,6 +4,10 @@ set -euo pipefail
 
 git submodule update --init
 
+if [ "$(uname)" = "Darwin" ]; then
+    ln -f -s ~/dotfiles/ghostty-config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+fi
+
 # Bashrc, zshrc, and inputrc
 ln -f -s ~/dotfiles/bashrc ~/.bashrc
 ln -f -s ~/dotfiles/zshrc ~/.zshrc
